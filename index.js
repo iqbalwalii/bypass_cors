@@ -12,7 +12,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/feed/:id", (req, res) => {
-  const backendUrl = `https://englishapi.pinkvilla.com/app-api/v1/photo-gallery-feed-page/page/${id}`;
+  const backendUrl = `https://englishapi.pinkvilla.com/app-api/v1/photo-gallery-feed-page/page/${req.params.id}`;
   axios.get(backendUrl).then((response) => res.send(response.data));
 });
 
