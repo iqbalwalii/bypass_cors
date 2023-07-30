@@ -11,9 +11,8 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
-app.get("/feed", (req, res) => {
-  const backendUrl =
-    "https://englishapi.pinkvilla.com/app-api/v1/photo-gallery-feed-page/page/1";
+app.get("/feed/:id", (req, res) => {
+  const backendUrl = `https://englishapi.pinkvilla.com/app-api/v1/photo-gallery-feed-page/page/${id}`;
   axios.get(backendUrl).then((response) => res.send(response.data));
 });
 
